@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+
+<div class="row" style="background-color: #ADD8E6">
+    <div class="col-lg-12" style="margin-bottom:20px">
+       <div class="row">
+          <div class="col-md-5">
+            <form method="post" novalidate>
+              {% csrf_token %}
+              <div style="'margin-left:40px">
+                <div class="col">
+                  {{ticket_form|crispy}}
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group row" style="margin-left: 16px;">
+                  <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
